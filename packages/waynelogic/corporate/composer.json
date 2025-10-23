@@ -1,0 +1,26 @@
+{
+    "name": "waynelogic/corporate",
+    "description": "Corp Plugin for Filament",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Waynelogic\\Corporate\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "waynelogic",
+            "email": "prigoda.ad@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Waynelogic\\Corporate\\CorporateServiceProvider"
+            ]
+        }
+    }
+}

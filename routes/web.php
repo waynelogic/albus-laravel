@@ -14,9 +14,10 @@ Route::controller(Controllers\BlogController::class)->group(function () {
     Route::get('/blog', 'index')->name('blog.index');
     Route::get('/blog/{post}', 'post')->name('blog.post');
 });
-//Route::get('dashboard', function () {
-//    return Inertia::render('Dashboard');
-//})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::post('/api/forms', [Controllers\FormsController::class, 'store'])->name('forms');
+
+Route::get('/test', [Controllers\TestController::class, 'index'])->name('test');
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';

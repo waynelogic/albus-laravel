@@ -18,7 +18,7 @@ const props = withDefaults(
 );
 
 const btnClasses = tv({
-    base: "inline-flex items-center justify-center font-medium text-white text-center border border-transparent cursor-pointer select-none duration-300",
+    base: "inline-flex items-center justify-center gap-3 font-medium text-white text-center border border-transparent cursor-pointer select-none duration-300",
     variants: {
         color: {
             primary: "bg-primary-600 hover:bg-primary-700",
@@ -27,7 +27,7 @@ const btnClasses = tv({
             danger: "bg-red-600 hover:bg-red-700",
             warning: "bg-yellow-600 hover:bg-yellow-700",
             info: "bg-blue-600 hover:bg-blue-700",
-            white: "bg-gray-100 text-gray-900 hover:bg-gray-200",
+            white: "bg-gray-100 text-gray-900 hover:text-primary-700 hover:bg-gray-200",
             dark: "bg-gray-900 hover:bg-gray-800",
         },
         rounded: {

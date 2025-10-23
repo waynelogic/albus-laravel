@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { Button } from "@/components/action";
+import { Button, Modal } from '@/components/action';
 import { contactsDB } from "@/data/contactsDB";
 import SiteLogo from "@/layouts/app/SiteLogo.vue";
 import { Link } from "@inertiajs/vue3";
-import { PhList, PhX } from "@phosphor-icons/vue";
+import { PhHeadset, PhList, PhX } from '@phosphor-icons/vue';
 import { ref } from "vue";
+import { isShowCallback } from '@/composables/useModals';
+import CallbackForm from '@/layouts/app/CallbackForm.vue';
 const menuOpen = ref<boolean>(false);
 
 const navItems = [
@@ -22,7 +24,7 @@ const navItems = [
     },
     {
         title: "Блог",
-        url: "/news",
+        url: "/blog",
     },
     {
         title: "Контакты",
@@ -32,20 +34,28 @@ const navItems = [
 </script>
 
 <template>
-    <header class="sticky top-0 z-50 border-b border-primary-100/50 bg-white/70 shadow backdrop-blur-md">
+    <Modal title="Обратная связь" v-model="isShowCallback">
+        <CallbackForm @formSubmitted="isShowCallback = false"/>
+    </Modal>
+
+    <header class="sticky top-0 z-50 border-b border-primary-100/50 shadow isolate">
+        <div class="absolute inset-0 bg-white/70 backdrop-blur -z-1"/>
         <div class="container flex items-center justify-between py-2">
-            <SiteLogo class="inline w-20" theme="dark" />
-            <nav :class="{ 'max-lg:-translate-x-full': !menuOpen }" class="inset-0 z-50 flex h-full duration-300 max-lg:fixed max-lg:inset-0 max-lg:mr-20 max-lg:flex-col max-lg:bg-white">
+            <SiteLogo class="inline w-20"/>
+            <transition enter-active-class="duration-300" enter-from-class="opacity-0" leave-active-class="duration-300" enter-to-class="opacity-100">
+                <div v-if="menuOpen" class="fixed inset-0 bg-black/50 lg:hidden" @click="menuOpen = false"/>
+            </transition>
+            <nav :class="{ 'max-lg:-translate-x-full': !menuOpen }" class="max-lg:max-w-sm max-md:inset-0 max-md:z-50 flex max-md:h-full transition-transform duration-300 max-lg:fixed max-lg:inset-0 max-lg:mr-20 max-lg:flex-col max-lg:bg-white">
                 <!-- Логотип-->
                 <div class="flex items-center justify-between border-b border-primary-300 px-3 py-2 lg:hidden">
                     <Link href="/">
-                        <SiteLogo />
+                        <SiteLogo class="inline w-20" />
                     </Link>
-                    <Button color="secondary" size="square" type="button" @click="menuOpen = false" class="p-2">
+                    <Button color="primary" size="square" type="button" @click="menuOpen = false" class="p-2">
                         <PhX weight="bold" class="size-6" />
                     </Button>
                 </div>
-                <ul class="flex gap-4 max-lg:flex-col">
+                <ul class="flex max-lg:flex-col">
                     <li v-for="(item, index) in navItems" :key="index">
                         <Link :href="item.url" class="border-primary hover:text-primary flex px-4 py-2 duration-300 max-lg:border-b max-lg:border-primary-300 md:px-2">
                             {{ item.title }}
@@ -68,9 +78,13 @@ const navItems = [
                 <!--                    </svg>-->
                 <!--                </button>-->
                 <!--                <Button type="button" rounded="xl" href="/login"> Войти </Button>-->
-                <button class="btn btn-primary px-3 lg:hidden" @click="menuOpen = !menuOpen">
+                <Button size="square" class="p-2 lg:hidden" @click="menuOpen = !menuOpen">
                     <PhList class="size-5" />
-                </button>
+                </Button>
+                <Button color="primary" @click="isShowCallback = true">
+                    <PhHeadset class="size-5"/>
+                    <span class="hidden lg:inline">Заказать звонок</span>
+                </Button>
             </div>
         </div>
     </header>

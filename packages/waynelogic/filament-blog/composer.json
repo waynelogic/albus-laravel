@@ -1,0 +1,25 @@
+{
+    "name": "waynelogic/filament-blog",
+    "description": "Filament blog Plugin",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Waynelogic\\FilamentBlog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Waynelogic"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Waynelogic\\FilamentBlog\\FilamentBlogServiceProvider"
+            ]
+        }
+    }
+}

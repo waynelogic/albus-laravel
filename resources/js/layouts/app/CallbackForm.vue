@@ -3,15 +3,15 @@ import { Input, InputLabel, TextArea, Toggle } from "@/components/form";
 import { Button } from "@/components/action";
 import { Form } from "@inertiajs/vue3";
 import { PhCircle, PhPaperPlaneTilt } from "@phosphor-icons/vue";
-import { forms } from "@/routes";
+import formsController from '@/actions/App/Http/Controllers/FormsController';
 
 const emit = defineEmits(["formSubmitted"]);
 </script>
 
 <template>
-    <Form :action="forms.post().url" method="POST" v-slot="{ errors, processing }" @success="emit('formSubmitted')" resetOnSuccess class="p-4" :options="{ preserveScroll: true }">
+    <Form :action="formsController.store()" method="POST" v-slot="{ errors, processing }" @success="emit('formSubmitted')" resetOnSuccess class="p-4" :options="{ preserveScroll: true }">
         <div class="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <input type="hidden" name="magic_form_type" value="callback" />
+            <input type="hidden" name="magic_form_type" default-value="callback" />
             <InputLabel class="sm:col-span-2" label="Ваше имя" :error="errors.name">
                 <Input type="text" name="name" placeholder="Ваше имя" />
             </InputLabel>

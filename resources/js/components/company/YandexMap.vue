@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, useTemplateRef } from 'vue';
+import { onMounted, ref, useTemplateRef } from 'vue';
 
 const mapContainer = useTemplateRef<HTMLDivElement | null>("mapContainer");
 
@@ -9,6 +9,8 @@ const props = defineProps<{
     lang?: string;
     scroll?: boolean;
 }>();
+
+const show = ref(false);
 
 onMounted(() => {
     const script = document.createElement('script');
@@ -24,7 +26,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div ref="mapContainer"></div>
+    <div ref="mapContainer"/>
 </template>
 
 <style scoped>

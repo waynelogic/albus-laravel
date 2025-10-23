@@ -20,7 +20,7 @@ const includedFeatures = ["Администрирование", "Сопрово�
                     <p class="mt-6 text-base/7 text-gray-600">Все наши специалисты имеют многолетний опыт работы, поэтому цена за час работы специалиста единая для всех.</p>
                     <div class="mt-10 flex items-center gap-x-4">
                         <h4 class="flex-none text-base/6 font-semibold text-primary-600">Какие имеенно работы?</h4>
-                        <div class="h-px flex-auto bg-gray-100" />
+                        <div class="h-px flex-auto bg-primary-200/80" />
                     </div>
                     <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm/6 text-gray-600 sm:grid-cols-2 sm:gap-6">
                         <li v-for="feature in includedFeatures" :key="feature" class="flex gap-x-3">

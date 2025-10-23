@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Button } from "@/components/action";
-import { Input, InputLabel, TextArea } from "@/components/form";
+import { Input, InputLabel, TextArea, Toggle } from "@/components/form";
 import { contactsDB } from "@/data/contactsDB";
 import AppLayout from "@/layouts/AppLayout.vue";
 import { Form } from "@inertiajs/vue3";
@@ -9,6 +9,8 @@ import { PhCircle, PhPaperPlaneTilt } from "@phosphor-icons/vue";
 import { SectionHeader } from "@/components/ui";
 import { BreadcrumbItem } from "@/types";
 import YandexMap from '@/components/company/YandexMap.vue';
+import { ref } from 'vue';
+import formsController from '@/actions/App/Http/Controllers/FormsController';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -20,6 +22,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: "/contacts",
     },
 ];
+const show = ref(false)
 </script>
 
 <template>
@@ -46,19 +49,19 @@ const breadcrumbs: BreadcrumbItem[] = [
                     <div>
                         <SectionHeader title="Оставайтесь на связи" subtitle="Мы всегда рады помочь вам!" />
                         <dl class="mt-10 space-y-6 text-base/7 text-gray-600">
-                            <component :is="item.href ? 'a' : 'div'" v-for="item in contactsDB" :href="item.href" class="flex gap-x-4 hover:text-primary-500">
+                            <component :is="item.href ? 'a' : 'div'" v-for="item in contactsDB" :href="item.href" class="flex items-center gap-x-4 hover:text-primary-500">
                                 <dt class="flex-none">
                                     <span class="sr-only">{{ item.title }}</span>
                                     <component :is="item.icon" weight="duotone" class="size-8 text-gray-400" aria-hidden="true" />
                                 </dt>
-                                <dd v-html="item.content" class="text-lg font-medium"></dd>
+                                <dd v-html="item.content" class="lg:text-lg font-medium"></dd>
                             </component>
                         </dl>
                     </div>
                     <div>
-                        <Form method="POST" v-slot="{ errors, processing }" resetOnSuccess class="p-4" :options="{ preserveScroll: true }">
+                        <Form :action="formsController.store()" method="POST" v-slot="{ errors, processing }" resetOnSuccess class="p-4" :options="{ preserveScroll: true }">
                             <div class="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                <Input type="hidden" name="magic_form_type" value="callback" />
+                                <Input type="hidden" name="magic_form_type" default-value="contact" />
                                 <InputLabel class="sm:col-span-2" label="Ваше имя" :error="errors.name">
                                     <Input type="text" name="name" placeholder="Ваше имя" />
                                 </InputLabel>
@@ -83,6 +86,9 @@ const breadcrumbs: BreadcrumbItem[] = [
                             </Button>
                         </Form>
                     </div>
+<!--                    <Button @click="show = !show">-->
+<!--                        asdasd-->
+<!--                    </Button>-->
                     <YandexMap class="md:col-span-2 rounded-2xl overflow-hidden shadow-lg min-h-[400px]"/>
                 </div>
             </div>

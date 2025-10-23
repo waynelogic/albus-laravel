@@ -15,12 +15,12 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-const navigation = [
-    { name: "Product", href: "#" },
-    { name: "Features", href: "#" },
-    { name: "Resources", href: "#" },
-    { name: "Company", href: "#" },
-];
+// const navigation = [
+//     { name: "Product", href: "#" },
+//     { name: "Features", href: "#" },
+//     { name: "Resources", href: "#" },
+//     { name: "Company", href: "#" },
+// ];
 const timeline = [
     {
         name: "Основание компании, начало работы отдела сопровождения",
@@ -47,38 +47,39 @@ const timeline = [
         dateTime: "2022-12",
     },
 ];
-const jobOpenings = [
-    {
-        id: 1,
-        role: "Full-time designer",
-        href: "#",
-        description: "Quos sunt ad dolore ullam qui. Enim et quisquam dicta molestias. Corrupti quo voluptatum eligendi autem labore.",
-        salary: "$75,000 USD",
-        location: "San Francisco, CA",
-    },
-    {
-        id: 2,
-        role: "Laravel developer",
-        href: "#",
-        description: "Et veniam et officia dolorum rerum. Et voluptas consequatur magni sapiente amet voluptates dolorum. Ut porro aut eveniet.",
-        salary: "$125,000 USD",
-        location: "San Francisco, CA",
-    },
-    {
-        id: 3,
-        role: "React Native developer",
-        href: "#",
-        description: "Veniam ipsam nisi quas architecto eos non voluptatem in nemo. Est occaecati nihil omnis delectus illum est.",
-        salary: "$105,000 USD",
-        location: "San Francisco, CA",
-    },
-];
+// const jobOpenings = [
+//     {
+//         id: 1,
+//         role: "Full-time designer",
+//         href: "#",
+//         description: "Quos sunt ad dolore ullam qui. Enim et quisquam dicta molestias. Corrupti quo voluptatum eligendi autem labore.",
+//         salary: "$75,000 USD",
+//         location: "San Francisco, CA",
+//     },
+//     {
+//         id: 2,
+//         role: "Laravel developer",
+//         href: "#",
+//         description: "Et veniam et officia dolorum rerum. Et voluptas consequatur magni sapiente amet voluptates dolorum. Ut porro aut eveniet.",
+//         salary: "$125,000 USD",
+//         location: "San Francisco, CA",
+//     },
+//     {
+//         id: 3,
+//         role: "React Native developer",
+//         href: "#",
+//         description: "Veniam ipsam nisi quas architecto eos non voluptatem in nemo. Est occaecati nihil omnis delectus illum est.",
+//         salary: "$105,000 USD",
+//         location: "San Francisco, CA",
+//     },
+// ];
 
 const partnersSliderOpt: SwiperOptions = {
     breakpoints: {
-        720: {
-            slidesPerView: 5,
-        },
+        384: { slidesPerView: 2, },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+        1280: { slidesPerView: 5 }
     },
 };
 </script>

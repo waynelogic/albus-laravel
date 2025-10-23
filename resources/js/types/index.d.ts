@@ -34,6 +34,29 @@ export interface User {
     updated_at: string;
 }
 
+export interface BlogCategory {
+    id: number;
+    name: string;
+    slug?: string;
+    preview_text: string;
+    icon: any;
+    created_at?: string;
+    updated_at?: string;
+}
+
+export interface BlogPost {
+    id: number;
+    title: string;
+    slug: string;
+    preview_text: string;
+    content?: string;
+    category?: BlogCategory;
+    published_at: string;
+    cover_url?: string;
+    created_at: string;
+    updated_at: string;
+}
+
 export type ServiceCategory = {
     id: number;
     name: string;
@@ -43,3 +66,13 @@ export type ServiceCategory = {
     created_at?: string;
     updated_at?: string;
 };
+
+export interface Partner {
+    id: number;
+    name: string;
+    slug: string;
+    preview_text?: string;
+    logo_url?: string;
+    created_at: string;
+    updated_at: string;
+}

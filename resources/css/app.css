@@ -5,6 +5,8 @@
 /*@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views!*.blade.php';*/
 /*@source '../../storage/framework/views!*.php';*/
 
+@plugin "@tailwindcss/typography";
+
 @custom-variant dark (&:is(.dark *));
 
 @utility container {
@@ -81,29 +83,29 @@
     /*--color-primary-900: #474972;*/
     /*--color-primary-950: #2a2b41;*/
 
-    /*--color-primary-50: #faf6f8;*/
-    /*--color-primary-100: #f5eef0;*/
-    /*--color-primary-200: #eee4e7;*/
-    /*--color-primary-300: #dbc6cd;*/
-    /*--color-primary-400: #c6a6b0;*/
-    /*--color-primary-500: #af8493;*/
-    /*--color-primary-600: #96687a;*/
-    /*--color-primary-700: #7c5465;*/
-    /*--color-primary-800: #694857;*/
-    /*--color-primary-900: #5b404d;*/
-    /*--color-primary-950: #312028;*/
+    --color-secondary-50: #faf6f8;
+    --color-secondary-100: #f5eef0;
+    --color-secondary-200: #eee4e7;
+    --color-secondary-300: #dbc6cd;
+    --color-secondary-400: #c6a6b0;
+    --color-secondary-500: #af8493;
+    --color-secondary-600: #96687a;
+    --color-secondary-700: #7c5465;
+    --color-secondary-800: #694857;
+    --color-secondary-900: #5b404d;
+    --color-secondary-950: #312028;
 
-    --color-secondary-50: #f8f5f2;
-    --color-secondary-100: #eae2db;
-    --color-secondary-200: #d4c2b3;
-    --color-secondary-300: #bda28c;
-    --color-secondary-400: #ae8971;
-    --color-secondary-500: #a47764;
-    --color-secondary-600: #8d5e52;
-    --color-secondary-700: #774b46;
-    --color-secondary-800: #633e3d;
-    --color-secondary-900: #523535;
-    --color-secondary-950: #2d1b1b;
+    /*--color-secondary-50: #f8f5f2;*/
+    /*--color-secondary-100: #eae2db;*/
+    /*--color-secondary-200: #d4c2b3;*/
+    /*--color-secondary-300: #bda28c;*/
+    /*--color-secondary-400: #ae8971;*/
+    /*--color-secondary-500: #a47764;*/
+    /*--color-secondary-600: #8d5e52;*/
+    /*--color-secondary-700: #774b46;*/
+    /*--color-secondary-800: #633e3d;*/
+    /*--color-secondary-900: #523535;*/
+    /*--color-secondary-950: #2d1b1b;*/
 
     /* Shadows */
     --shadow-out: rgba(60, 64, 67, 0.3) 0px 0px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
