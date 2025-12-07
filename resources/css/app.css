@@ -35,18 +35,6 @@
     --breakpoint-xs: 30rem;
 
     /* Colors */
-    /*--color-primary-50: #f2f3fc;*/
-    /*--color-primary-100: #e1e2ee;*/
-    /*--color-primary-200: #ccd7f9;*/
-    /*--color-primary-300: #adbcf4;*/
-    /*--color-primary-400: #8b98ee;*/
-    /*--color-primary-500: #6f77e5;*/
-    /*--color-primary-600: #4846d4;*/
-    /*--color-primary-700: #4945bd;*/
-    /*--color-primary-800: #3c3a99;*/
-    /*--color-primary-900: #35357a;*/
-    /*--color-primary-950: #201f47;*/
-
     --color-primary-50: #f7f6fc;
     --color-primary-100: #efeef9;
     --color-primary-200: #e1dff5;
@@ -71,17 +59,18 @@
     /*--color-primary-900: #7a330d;*/
     /*--color-primary-950: #461a02;*/
 
-    /*--color-primary-50: #f4f6fa;*/
-    /*--color-primary-100: #e6e9f3;*/
-    /*--color-primary-200: #d3d8ea;*/
-    /*--color-primary-300: #b5bfdb;*/
-    /*--color-primary-400: #919ec9;*/
-    /*--color-primary-500: #7782ba;*/
-    /*--color-primary-600: #646cac;*/
-    /*--color-primary-700: #595c9c;*/
-    /*--color-primary-800: #4c4e81;*/
-    /*--color-primary-900: #474972;*/
-    /*--color-primary-950: #2a2b41;*/
+    /*--color-primary-50: #fff0f1;*/
+    /*--color-primary-100: #ffdee0;*/
+    /*--color-primary-200: #ffc3c7;*/
+    /*--color-primary-300: #ff9aa1;*/
+    /*--color-primary-400: #ff606b;*/
+    /*--color-primary-500: #ff2e3d;*/
+    /*--color-primary-600: #f41e2d;*/
+    /*--color-primary-700: #cd0816;*/
+    /*--color-primary-800: #a90b16;*/
+    /*--color-primary-900: #8c1019;*/
+    /*--color-primary-950: #4d0207;*/
+
 
     --color-secondary-50: #faf6f8;
     --color-secondary-100: #f5eef0;
@@ -116,22 +105,22 @@
     --animate-wobble-vertical: wobble_vertical 1s ease-in-out 1;
     @keyframes wobble_vertical {
         16.65% {
-            transform: translateY(8px)
+            transform: translateY(8px);
         }
         33.3% {
-            transform: translateY(-6px)
+            transform: translateY(-6px);
         }
         49.95% {
-            transform: translateY(4px)
+            transform: translateY(4px);
         }
         66.6% {
-            transform: translateY(-2px)
+            transform: translateY(-2px);
         }
         83.25% {
-            transform: translateY(1px)
+            transform: translateY(1px);
         }
         100% {
-            transform: translateY(0)
+            transform: translateY(0);
         }
     }
 }
@@ -152,12 +141,6 @@
         }
         .swiper-pagination-bullet-active {
             @apply scale-125 bg-primary-500;
-        }
-    }
-    .swiper-navigation-default {
-        .swiper-button-prev,
-        .swiper-button-next {
-            @apply absolute top-1/2 -translate-y-1/2;
         }
     }
     .swiper-button-prev,

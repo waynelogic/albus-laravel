@@ -15,12 +15,6 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-// const navigation = [
-//     { name: "Product", href: "#" },
-//     { name: "Features", href: "#" },
-//     { name: "Resources", href: "#" },
-//     { name: "Company", href: "#" },
-// ];
 const timeline = [
     {
         name: "Основание компании, начало работы отдела сопровождения",
@@ -47,6 +41,7 @@ const timeline = [
         dateTime: "2022-12",
     },
 ];
+
 // const jobOpenings = [
 //     {
 //         id: 1,
@@ -76,10 +71,10 @@ const timeline = [
 
 const partnersSliderOpt: SwiperOptions = {
     breakpoints: {
-        384: { slidesPerView: 2, },
+        384: { slidesPerView: 2 },
         768: { slidesPerView: 3 },
         1024: { slidesPerView: 4 },
-        1280: { slidesPerView: 5 }
+        1280: { slidesPerView: 5 },
     },
 };
 </script>

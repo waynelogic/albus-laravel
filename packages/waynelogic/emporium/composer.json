@@ -1,0 +1,29 @@
+{
+    "name": "waynelogic/emporium",
+    "description": "The E-com plugin for Filament",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Waynelogic\\Emporium\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Waynelogic"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "filament/spatie-laravel-media-library-plugin": "^4.0",
+        "laravel/scout": "^10.22"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Waynelogic\\Emporium\\EmporiumServiceProvider",
+                "Waynelogic\\Emporium\\EmporiumPanelProvider"
+            ]
+        }
+    }
+}

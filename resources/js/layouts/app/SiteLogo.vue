@@ -6,8 +6,8 @@ withDefaults(
     }>(),
     {
         theme: "light",
-        width: "100%",
-        height: "100%",
+        width: "80px",
+        height: "41px",
     },
 );
 </script>

@@ -1,24 +1,20 @@
 <script setup lang="ts">
+import { Button } from "@/components/action";
 import { PostCard } from "@/components/blog";
 import { HomeHeroSlider, HourPricing } from "@/components/home";
 import { ProductCard } from "@/components/products";
 import { CategoryCard } from "@/components/services";
 import { SectionBadge, SectionHeader, Swiper, SwiperSlide } from "@/components/ui";
 import AppLayout from "@/layouts/AppLayout.vue";
-import { BlogPost, Partner, ServiceCategory } from '@/types';
-import {
-    PhAppleLogo, PhAppWindow, PhBarcode, PhBriefcase, PhCheck,
-    PhCrown, PhDatabase, PhGlobe, PhPiggyBank, PhPulse, PhSketchLogo, PhTruck
-} from '@phosphor-icons/vue';
+import { BlogPost, Partner, Product, ServiceCategory } from '@/types';
+import { PhAppleLogo, PhAppWindow, PhBarcode, PhBriefcase, PhCheck, PhCrown, PhDatabase, PhGlobe, PhPiggyBank, PhPulse, PhSketchLogo } from "@phosphor-icons/vue";
 import { SwiperOptions } from "swiper/types";
-import { Button } from '@/components/action';
-import { isShowCallback } from '@/composables/useModals';
 
 defineProps<{
+    products: Product[];
     partners: Partner[];
     posts: BlogPost[];
 }>();
-
 
 const categories: ServiceCategory[] = [
     {
@@ -73,28 +69,28 @@ const categories: ServiceCategory[] = [
 
 const about = [
     {
-        title: 'Настроенные и эффективные системы учета'
+        title: "Настроенные и эффективные системы учета",
     },
     {
-        title: 'Безопасную локальную и внешнюю сеть'
+        title: "Безопасную локальную и внешнюю сеть",
     },
     {
-        title: 'Лицензионное программное обеспечение'
+        title: "Лицензионное программное обеспечение",
     },
     {
-        title: 'Корректный бухгалтерский и управленческий учет'
+        title: "Корректный бухгалтерский и управленческий учет",
     },
     {
-        title: 'Красивый и информативный сайт'
-    }
-]
+        title: "Красивый и информативный сайт",
+    },
+];
 
 const partnersSliderOpt: SwiperOptions = {
     breakpoints: {
-        384: { slidesPerView: 2, },
+        384: { slidesPerView: 2 },
         768: { slidesPerView: 3 },
         1024: { slidesPerView: 4 },
-        1280: { slidesPerView: 5 }
+        1280: { slidesPerView: 5 },
     },
 };
 </script>
@@ -124,27 +120,27 @@ const partnersSliderOpt: SwiperOptions = {
         <section id="about">
             <div class="container py-12">
                 <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
-                    <div class="flex flex-col justify-center relative isolate">
-                        <img class="absolute top-1/2 right-[102%] -translate-y-1/2 h-50 w-28 animate-bounce hue-rotate-[200deg]" src="/images/home/triangle.png" alt="">
+                    <div class="relative isolate flex flex-col justify-center">
+                        <svg class="absolute top-1/2 right-[102%] w-20 -translate-y-1/2 animate-bounce text-primary-400" width="100%" height="100%" viewBox="0 0 246 395" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+                            <path fill="currentColor" transform="matrix(8.74108e-17,-1.42753,1.24503,7.62364e-17,-3271.11,1942.2)" d="M1352.24,2766.97C1360.49,2776.78 1362.82,2791.3 1358.17,2803.84C1353.52,2816.38 1342.79,2824.52 1330.9,2824.52L1113.63,2824.52C1101.74,2824.52 1091.01,2816.38 1086.36,2803.84C1081.71,2791.3 1084.05,2776.78 1092.29,2766.97C1127.78,2724.76 1174.25,2669.46 1200.93,2637.72C1206.52,2631.08 1214.22,2627.32 1222.27,2627.32C1230.31,2627.32 1238.02,2631.08 1243.6,2637.72C1270.28,2669.46 1316.75,2724.76 1352.24,2766.97Z"/>\
+                        </svg>
+<!--                        <img class="absolute top-1/2 right-[102%] h-50 w-28 -translate-y-1/2 animate-bounce hue-rotate-[200deg]" src="/images/home/triangle.png" alt="" />-->
                         <div class="relative xl:size-full">
-                            <div class="absolute top-11/12 max-w-md flex items-center gap-5 shadow-out p-4 rounded-lg bg-white z-1">
-                                <PhPulse weight="bold" class="shrink-0 text-primary-600 size-12"/>
-                                <p>
-                                    Более 10 лет мы успешно внедряем
-                                    различные решения для бизнеса!
-                                </p>
+                            <div class="absolute top-11/12 z-1 flex max-w-md items-center gap-5 rounded-lg bg-white p-4 shadow-out">
+                                <PhPulse weight="bold" class="size-12 shrink-0 text-primary-600" />
+                                <p>Более 10 лет мы успешно внедряем различные решения для бизнеса!</p>
                             </div>
-                            <img class="w-full xl:size-full xl:absolute object-contain max-md:h-90" src="/images/home/audit.svg" alt="">
+                            <img class="w-full object-contain max-md:h-90 xl:absolute xl:size-full" src="/images/home/audit.svg" alt="" />
                         </div>
-<!--                        <img class="absolute right-0 z-1 size-20 -translate-y-1/3 rounded-full bg-white md:translate-x-1/3" src="/images/home/certificate.png" alt="" />-->
-<!--                        <img class="size-full rounded-3xl object-cover object-center shadow max-md:h-90 md:absolute" src="/images/home/about-image.jpg" alt="" />-->
+                        <!--                        <img class="absolute right-0 z-1 size-20 -translate-y-1/3 rounded-full bg-white md:translate-x-1/3" src="/images/home/certificate.png" alt="" />-->
+                        <!--                        <img class="size-full rounded-3xl object-cover object-center shadow max-md:h-90 md:absolute" src="/images/home/about-image.jpg" alt="" />-->
                     </div>
                     <div class="flex flex-col gap-5">
                         <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-4xl lg:text-5xl">Премиальное сопровождение бизнеса по всей России</h2>
                         <p>Наши эксперты помогут вам оптимизировать ваш бизнес и принести отличные результаты. Не ждите, улучшайте свой бизнес уже сейчас с Albus.</p>
-                        <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
+                        <div class="grid grid-cols-1 gap-10 xl:grid-cols-2">
                             <div>
-                                <h3 class="text-lg font-semibold mb-2">Что получает наш клиент?</h3>
+                                <h3 class="mb-2 text-lg font-semibold">Что получает наш клиент?</h3>
                                 <ul class="flex flex-col gap-4">
                                     <li v-for="(item, index) in about" :key="index" class="flex items-center gap-4 font-medium duration-150 select-none">
                                         <PhCheck weight="bold" class="size-5 shrink-0 text-primary-600" />
@@ -153,73 +149,54 @@ const partnersSliderOpt: SwiperOptions = {
                                 </ul>
                             </div>
                             <div class="max-xl:hidden">
-                                <div class="flex flex-col gap-4 bg-white/30 backdrop-blur p-8 rounded-2xl shadow">
-                                    <PhCrown class="size-14 text-primary-600" weight="duotone"/>
+                                <div class="flex flex-col gap-4 rounded-2xl bg-white/30 p-8 shadow backdrop-blur">
+                                    <PhCrown class="size-14 text-primary-600" weight="duotone" />
                                     <h4 class="text-xl font-semibold">Мы поможем вашему бизнесу стать еще лучше!</h4>
-                                    <Button>
-                                        Обратная связь
-                                    </Button>
+                                    <Button> Обратная связь </Button>
                                 </div>
                             </div>
                         </div>
 
-<!--                        <div class="w-full divide-y divide-gray-300 overflow-hidden rounded-2xl border border-gray-300">-->
-<!--                            <details v-for="item in about" class="group peer w-full">-->
-<!--                                <summary class="flex cursor-pointer items-center gap-4 px-5 py-4 font-medium duration-150 select-none group-open:bg-primary-200 hover:bg-primary-300">-->
-<!--                                    <PhCheck weight="bold" class="size-5 shrink-0 text-primary-600" />-->
-<!--                                    <span>{{ item }}</span>-->
-<!--                                </summary>-->
-<!--                                <p class="border-t border-gray-300 px-5 py-3 bg-primary-200">Раскрывающийся текст</p>-->
-<!--                            </details>-->
-<!--                        </div>-->
-<!--                        <div class="grid grid-cols-2 gap-4">-->
-<!--                            <div class="flex items-center gap-4" v-for="i in 2">-->
-<!--                                <PhTruck weight="duotone" class="size-20 text-primary-600" />-->
-<!--                                <div>-->
-<!--                                    <h3 class="font-semibold">Business Growth</h3>-->
-<!--                                    <p class="text-sm">Quickly productivate just in time strategic lacus mirina</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <!--                        <div class="w-full divide-y divide-gray-300 overflow-hidden rounded-2xl border border-gray-300">-->
+                        <!--                            <details v-for="item in about" class="group peer w-full">-->
+                        <!--                                <summary class="flex cursor-pointer items-center gap-4 px-5 py-4 font-medium duration-150 select-none group-open:bg-primary-200 hover:bg-primary-300">-->
+                        <!--                                    <PhCheck weight="bold" class="size-5 shrink-0 text-primary-600" />-->
+                        <!--                                    <span>{{ item }}</span>-->
+                        <!--                                </summary>-->
+                        <!--                                <p class="border-t border-gray-300 px-5 py-3 bg-primary-200">Раскрывающийся текст</p>-->
+                        <!--                            </details>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="grid grid-cols-2 gap-4">-->
+                        <!--                            <div class="flex items-center gap-4" v-for="i in 2">-->
+                        <!--                                <PhTruck weight="duotone" class="size-20 text-primary-600" />-->
+                        <!--                                <div>-->
+                        <!--                                    <h3 class="font-semibold">Business Growth</h3>-->
+                        <!--                                    <p class="text-sm">Quickly productivate just in time strategic lacus mirina</p>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
                     </div>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section class="relative isolate mt-12 overflow-hidden border-y border-primary-300 bg-primary-100">
+            <div class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl" aria-hidden="true">
+                <div class="aspect-1404/767 w-[87.75rem] bg-linear-to-r from-primary-400 to-primary-500 opacity-25" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)" />
+            </div>
             <div class="container flex flex-col pt-12">
                 <SectionHeader center title="Наши клиенты и партнеры" subtitle="За прошедшее десятилетие мы стали надёжным партнёром для свыше 1000 компаний по всему миру. Присоединяйтесь к лидерам рынка, которые выбрали нас для достижения своих целей." />
-                <div class="border-gray-300 rounded-2xl px-4 py-10 mt-10">
+                <div class="mt-10 rounded-2xl border-gray-300 px-4 py-10">
                     <Swiper :options="partnersSliderOpt" navigation="none">
                         <SwiperSlide v-for="partner in partners">
-                            <img class="max-h-12 w-full object-contain object-left" :src="partner.logo_url" :alt="partner.name" width="158" height="48" />
+                            <img loading="lazy" class="max-h-12 w-full object-contain object-left" :src="partner.logo_url" :alt="partner.name" width="158" height="48" />
                         </SwiperSlide>
                     </Swiper>
                 </div>
-<!--                <Button rounded="full" color="primary" size="sm" class="mt-10 mx-auto" @click="isShowCallback = true">-->
-<!--                    Хотите стать клентом или партнером компании Albus?-->
-<!--                </Button>-->
+<!--                                <Button rounded="full" color="primary" size="sm" class="mt-10 mx-auto" @click="isShowCallback = true">-->
+<!--                                    Хотите стать клентом или партнером компании Albus?-->
+<!--                                </Button>-->
             </div>
-<!--            <div class="sm:container">-->
-<!--                <div class="relative isolate overflow-hidden bg-primary-950 px-6 py-16 text-center shadow-2xl sm:rounded-3xl sm:px-16">-->
-<!--                    <SectionHeader center class="dark" title="Наши клиенты и партнеры" subtitle="За прошедшее десятилетие мы стали надёжным партнёром для свыше 1000 компаний по всему миру. Присоединяйтесь к лидерам рынка, которые выбрали нас для достижения своих целей." />-->
-<!--                    <div class="p-4 bg-white rounded-2xl shadow mt-10">-->
-<!--                        <Swiper :options="partnersSliderOpt" navigation="none">-->
-<!--                            <SwiperSlide v-for="partner in partners">-->
-<!--                                <img class="max-h-12 w-full object-contain" :src="partner.logo_url" :alt="partner.name" width="158" height="48" />-->
-<!--                            </SwiperSlide>-->
-<!--                        </Swiper>-->
-<!--                    </div>-->
-<!--                    <div class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl" aria-hidden="true">-->
-<!--                        <div class="aspect-1404/767 w-[87.75rem] bg-linear-to-r from-primary-950 to-primary-200 opacity-25" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)" />-->
-<!--                    </div>-->
-<!--                    <p class="relative mt-12">-->
-<!--                        <Button rounded="full" color="white" size="sm" @click="isShowCallback = true">-->
-<!--                            Хотите стать клентом или партнером компании Albus?-->
-<!--                        </Button>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
         </section>
 
         <section>
@@ -229,7 +206,7 @@ const partnersSliderOpt: SwiperOptions = {
                     <SectionBadge as="a" href="/"> Каталог </SectionBadge>
                 </header>
                 <div class="grid grid-cols-1 gap-5 xs:grid-cols-2 md:gap-8 lg:grid-cols-4">
-                    <ProductCard v-for="i in 4" :key="i" />
+                    <ProductCard v-for="product in products" :key="product.id" :product="product" />
                 </div>
             </div>
         </section>

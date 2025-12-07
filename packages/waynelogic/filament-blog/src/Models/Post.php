@@ -67,6 +67,17 @@ class Post extends Model implements HasMedia
         return $this->belongsToMany(Tag::class, 'blog_post_tag', 'post_id', 'tag_id');
     }
 
+    // Scopes
+    public function scopePublished($query)
+    {
+        return $query->where('is_published', true)->where('published_at', '<=', now());
+    }
+
+    public function scopeHasCover($query)
+    {
+        return $query->where('has_cover', true);
+    }
+
     public function getCoverUrlAttribute(): string
     {
         return $this->getFirstMediaUrl('blog_post_covers');

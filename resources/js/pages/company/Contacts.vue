@@ -6,11 +6,11 @@ import AppLayout from "@/layouts/AppLayout.vue";
 import { Form } from "@inertiajs/vue3";
 import { PhCircle, PhPaperPlaneTilt } from "@phosphor-icons/vue";
 
+import formsController from "@/actions/App/Http/Controllers/FormsController";
+import YandexMap from "@/components/company/YandexMap.vue";
 import { SectionHeader } from "@/components/ui";
 import { BreadcrumbItem } from "@/types";
-import YandexMap from '@/components/company/YandexMap.vue';
-import { ref } from 'vue';
-import formsController from '@/actions/App/Http/Controllers/FormsController';
+import { ref } from "vue";
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -22,7 +22,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: "/contacts",
     },
 ];
-const show = ref(false)
+const show = ref(false);
 </script>
 
 <template>
@@ -54,7 +54,7 @@ const show = ref(false)
                                     <span class="sr-only">{{ item.title }}</span>
                                     <component :is="item.icon" weight="duotone" class="size-8 text-gray-400" aria-hidden="true" />
                                 </dt>
-                                <dd v-html="item.content" class="lg:text-lg font-medium"></dd>
+                                <dd v-html="item.content" class="font-medium lg:text-lg"></dd>
                             </component>
                         </dl>
                     </div>
@@ -86,10 +86,10 @@ const show = ref(false)
                             </Button>
                         </Form>
                     </div>
-<!--                    <Button @click="show = !show">-->
-<!--                        asdasd-->
-<!--                    </Button>-->
-                    <YandexMap class="md:col-span-2 rounded-2xl overflow-hidden shadow-lg min-h-[400px]"/>
+                    <!--                    <Button @click="show = !show">-->
+                    <!--                        asdasd-->
+                    <!--                    </Button>-->
+                    <YandexMap class="min-h-[400px] overflow-hidden rounded-2xl shadow-lg md:col-span-2" />
                 </div>
             </div>
         </section>

@@ -7,6 +7,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 use Waynelogic\Corporate\Filament\Resources\Partners\Pages\CreatePartner;
 use Waynelogic\Corporate\Filament\Resources\Partners\Pages\EditPartner;
 use Waynelogic\Corporate\Filament\Resources\Partners\Pages\ListPartners;
@@ -24,7 +25,9 @@ class PartnerResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingOffice2;
+
+    protected static string | BackedEnum | null $activeNavigationIcon = Heroicon::BuildingOffice2;
 
     public static function form(Schema $schema): Schema
     {

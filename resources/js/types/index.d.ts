@@ -76,3 +76,23 @@ export interface Partner {
     created_at: string;
     updated_at: string;
 }
+
+export interface Price {
+    id: number;
+    price: number;
+    old_price?: number;
+    created_at?: string;
+    updated_at?: string;
+}
+
+export interface Product {
+    id: number;
+    name: string;
+    slug: string;
+    main_price?: Price;
+    prices?: Price[];
+    preview_text?: string;
+    cover_url?: string;
+    created_at?: string;
+    updated_at?: string;
+}

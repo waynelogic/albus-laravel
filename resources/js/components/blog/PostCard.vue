@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import blog from '@/routes/blog';
-import { BlogPost } from '@/types';
-import { Link } from '@inertiajs/vue3';
+import blog from "@/routes/blog";
+import { BlogPost } from "@/types";
+import { Link } from "@inertiajs/vue3";
 
 defineProps<{
     post: BlogPost;

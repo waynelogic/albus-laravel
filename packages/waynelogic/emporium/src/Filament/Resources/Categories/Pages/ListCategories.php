@@ -1,0 +1,19 @@
+<?php
+
+namespace Waynelogic\Emporium\Filament\Resources\Categories\Pages;
+
+use Filament\Actions\CreateAction;
+use Filament\Resources\Pages\ListRecords;
+use Filament\Tables\Table;
+use Waynelogic\Emporium\Filament\Resources\Categories\CategoryResource;
+
+class ListCategories extends ListRecords
+{
+    protected static string $resource = CategoryResource::class;
+    protected function getHeaderActions(): array
+    {
+        return [
+            CreateAction::make(),
+        ];
+    }
+}

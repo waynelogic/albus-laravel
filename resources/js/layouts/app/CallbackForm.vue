@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Input, InputLabel, TextArea, Toggle } from "@/components/form";
+import formsController from "@/actions/App/Http/Controllers/FormsController";
 import { Button } from "@/components/action";
+import { Input, InputLabel, TextArea, Toggle } from "@/components/form";
 import { Form } from "@inertiajs/vue3";
 import { PhCircle, PhPaperPlaneTilt } from "@phosphor-icons/vue";
-import formsController from '@/actions/App/Http/Controllers/FormsController';
 
 const emit = defineEmits(["formSubmitted"]);
 </script>

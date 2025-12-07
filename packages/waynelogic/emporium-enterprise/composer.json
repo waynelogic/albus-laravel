@@ -1,0 +1,28 @@
+{
+    "name": "waynelogic/emporium-enterprise",
+    "description": "1C Exchange",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Waynelogic\\EmporiumEnterprise\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Waynelogic"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ext-simplexml": "*",
+        "ext-xmlreader": "*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Waynelogic\\EmporiumEnterprise\\EmporiumEnterpriseServiceProvider"
+            ]
+        }
+    }
+}

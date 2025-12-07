@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AppLayout from '@/layouts/AppLayout.vue';
-import { BlogPost, BreadcrumbItem } from '@/types';
-import { BreadcrumbItems } from '@/layouts/app';
+import { BreadcrumbItems } from "@/layouts/app";
+import AppLayout from "@/layouts/AppLayout.vue";
+import { BlogPost, BreadcrumbItem } from "@/types";
 
 const props = defineProps<{
     post: BlogPost;
@@ -17,7 +17,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: "/blog",
     },
     {
-        title: 'Запись',
+        title: "Запись",
         href: `/blog/${props.post.slug}`,
     },
 ];
@@ -47,6 +47,4 @@ const breadcrumbs: BreadcrumbItem[] = [
     </AppLayout>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

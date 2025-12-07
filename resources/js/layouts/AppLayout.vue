@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BreadcrumbItems, SiteFooter, SiteHeader } from "@/layouts/app";
+import { BreadcrumbItems, SiteFooter, SiteHeader, Snow } from '@/layouts/app';
 import { BreadcrumbItem } from "@/types";
 import { Head } from "@inertiajs/vue3";
 
@@ -18,6 +18,7 @@ withDefaults(
     <Head>
         <title v-if="title">{{ title }}</title>
     </Head>
+    <Snow  :count="200" :speed="1.2" :size="5" :opacity="0.7"/>
     <div class="isolate flex min-h-screen flex-col bg-[#f2f3f7] dark:bg-[#14161a]">
         <SiteHeader />
         <section id="breadcrumbs" v-if="breadcrumbs.length" class="relative isolate overflow-hidden border-b border-gray-300">

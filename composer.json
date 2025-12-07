@@ -6,7 +6,7 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "inertiajs/inertia-laravel": "^2.0",
         "laravel/fortify": "^1.30",
         "laravel/framework": "^12.0",
@@ -15,7 +15,9 @@
         "waynelogic/filament-cms": "^1.0",
         "waynelogic/magic-forms": "^1.0",
         "waynelogic/filament-blog": "@dev",
-        "waynelogic/corporate": "@dev"
+        "waynelogic/corporate": "@dev",
+        "waynelogic/emporium": "@dev",
+        "waynelogic/emporium-enterprise": "@dev"
     },
     "repositories": [
         {
@@ -24,7 +26,15 @@
         },
         {
             "type": "path",
+            "url": "./packages/waynelogic/emporium"
+        },
+        {
+            "type": "path",
             "url": "./packages/waynelogic/corporate"
+        },
+        {
+            "type": "path",
+            "url": "./packages/waynelogic/emporium-enterprise"
         }
     ],
     "require-dev": {

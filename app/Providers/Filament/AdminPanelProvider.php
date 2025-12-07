@@ -19,6 +19,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Waynelogic\Corporate\CorporatePlugin;
+use Waynelogic\Emporium\EmporiumPlugin;
 use Waynelogic\FilamentBlog\FilamentBlogPlugin;
 use Waynelogic\FilamentCms\FilamentCmsPlugin;
 use Waynelogic\MagicForms\MagicFormsPlugin;
@@ -61,6 +62,7 @@ class AdminPanelProvider extends PanelProvider
                 new MagicFormsPlugin(),
                 new FilamentBlogPlugin(),
                 new CorporatePlugin(),
+                (new EmporiumPlugin())->onlyLink()
             ])
             ->authMiddleware([
                 Authenticate::class,

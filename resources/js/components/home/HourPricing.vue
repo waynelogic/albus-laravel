@@ -24,7 +24,7 @@ const includedFeatures = ["Администрирование", "Сопрово�
                     </div>
                     <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm/6 text-gray-600 sm:grid-cols-2 sm:gap-6">
                         <li v-for="feature in includedFeatures" :key="feature" class="flex gap-x-3">
-                            <PhCheck class="h-6 w-5 flex-none text-indigo-600" aria-hidden="true" />
+                            <PhCheck class="h-6 w-5 flex-none text-primary-600" aria-hidden="true" />
                             {{ feature }}
                         </li>
                     </ul>

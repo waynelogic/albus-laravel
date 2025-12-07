@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AppLayout from '@/layouts/AppLayout.vue';
-import { BreadcrumbItem } from '@/types';
+import AppLayout from "@/layouts/AppLayout.vue";
+import { BreadcrumbItem } from "@/types";
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -15,9 +15,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 </script>
 
 <template>
-    <AppLayout title="Блог" :breadcrumbs="breadcrumbs">
-
-    </AppLayout>
+    <AppLayout title="Блог" :breadcrumbs="breadcrumbs"> </AppLayout>
 </template>
 
 <style scoped></style>
